@@ -1,3 +1,3 @@
 ## screenshot
 
-![image](https://raw.githubusercontent.com/lwvoid/front-end-demo/master/20170907-line-segment-intersection/screenshot.jpg)
+![image](https://github.com/lwvoid/front-end-demo/blob/master/20170907-line-segment-intersection/screenshot.png)
