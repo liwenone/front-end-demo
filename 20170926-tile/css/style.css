@@ -1,0 +1,49 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.container {
+    -webkit-perspective: 500px;
+            perspective: 500px;
+    height: 100%;
+}
+
+.tiles {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 360px;
+    height: 360px;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: translate3d(-50%, -50%, 0) rotateX(60deg) rotateZ(45deg);
+            transform: translate3d(-50%, -50%, 0) rotateX(60deg) rotateZ(45deg);
+}
+
+.unit {
+    width: 100px;
+    height: 100px;
+    background-color: #75A2A2;
+    float: left;
+    margin: 10px;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s, -webkit-transform 0.3s;
+    transition: background-color 0.3s, -webkit-transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
+    transition: transform 0.3s, background-color 0.3s, -webkit-transform 0.3s;
+}
+
+.unit:hover {
+    -webkit-transform: translateZ(10px);
+            transform: translateZ(10px);
+    background-color: #FFC600;
+    -webkit-box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.5);
+}
