@@ -3,6 +3,7 @@
 
 序号 | 名称 | 关键词  | 时间 | 在线预览
 ---|---| --- | --- | --- |
+6 | [磁带](https://github.com/lwvoid/front-end-demo/tree/master/20171017-tape)|css| 10-17-2017 | [预览](https://lwvoid.github.io/front-end-demo/20171017-tape/)
 5 | [瓦片地面](https://github.com/lwvoid/front-end-demo/tree/master/20170926-tile)|css, 3d| 09-26-2017 | [预览](https://lwvoid.github.io/front-end-demo/20170926-tile/)
 4 | [立方体](https://github.com/lwvoid/front-end-demo/tree/master/20170925-cube)|css, 3d| 09-25-2017 | [预览](https://lwvoid.github.io/front-end-demo/20170925-cube/)
 3 | [轮廓线](https://github.com/lwvoid/front-end-demo/tree/master/20170910-skyline)|canvas, js| 09-11-2017 | [预览](https://lwvoid.github.io/front-end-demo/20170910-skyline/)
