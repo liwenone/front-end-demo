@@ -5,12 +5,6 @@ function bind(obj, func) {
 }
 
 
-// 绘制结点函数，将所有图片的锚点都设置为图片底边中心，以方便绘制
-CanvasRenderingContext2D.prototype.drawNode = function(img, x, y) {
-    this.drawImage(img, x - img.width/2, this.canvas.height - (y + img.height));
-}
-
-
 // 自定义事件处理器
 var Event = {
     _mapEvents: {},
@@ -134,9 +128,9 @@ var Animation = {
 // 玩家
 var Player = {
     x: 400,
-    y: 105,
+    y: 335,
     minX: 175,
-    maxX: 650,
+    maxX: 655,
     speed: 200,
     jumpSpeed: 550,
     maxHeight: 140,
@@ -211,12 +205,22 @@ var Player = {
     },
 
     draw: function(ctx) {
-        ctx.save();
         var curRes = Animation.getRes();
+        var hy = this.y - this.curHeight;
 
-        ctx.translate(this.x, this.y);
-        this.isFaceRight ? ctx.scale(-1, 1) : ctx.scale(1, 1);
-        ctx.drawNode(curRes, 0, 0);
+        ctx.save();
+        // 没有进行坐标转换，处理比较蛋疼，下一个版本见
+        if (this.isFaceRight) {
+            // this.y包含了跳起高度，再减去this.curHeight是让角色不受跳起高度的影响，保持原来的站立时的y坐标
+            // 加curRes.height只是为了移动锚点而已，本例中的所有绘制锚点都定为图片底边的中点
+            // 实际效果可以看到角色在移动时，位置上移了，是因为扇子增加了角色的高度
+            // 可以设置中心，或者其它为锚点，我懒就不改了
+            ctx.translate(this.x + curRes.width/2, hy + curRes.height);
+            ctx.scale(-1, 1);
+            ctx.drawImage(curRes, 0, -this.curHeight);
+        } else {
+            ctx.drawImage(curRes, this.x - curRes.width/2, hy + curRes.height - this.curHeight); // 绘制锚点底边中心
+        }
         ctx.restore();
     },
 }
@@ -238,25 +242,15 @@ var Game = {
     initKeyEvents: function() {
         window.addEventListener('keydown', function(e) {
             switch(e.keyCode) {
-                case 37:
-                    Player.moveLeft(true);
-                    break;
-                case 38:
-                    Player.jump();
-                    break;
-                case 39:
-                    Player.moveRight(true);
-                    break;
+                case 37: Player.moveLeft(true); break;
+                case 38: Player.jump(); break;
+                case 39: Player.moveRight(true); break;
             }
         });
         window.addEventListener('keyup', function(e) {
             switch(e.keyCode) {
-                case 37:
-                    Player.moveLeft(false);
-                    break;
-                case 39:
-                    Player.moveRight(false);
-                    break;
+                case 37: Player.moveLeft(false); break;
+                case 39: Player.moveRight(false); break;
             }
         });
     },
@@ -285,9 +279,13 @@ var Game = {
     },
 
     draw: function() {
+        var bg1 = this.imgs['bg'][0];
+        var bg2 = this.imgs['bg'][1];
+        
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawNode(this.imgs['bg'][0], this.canvas.width/2, 0);   // 绘制背景
-        this.ctx.drawNode(this.imgs['bg'][1], this.canvas.width/2, 0);   // 绘制背景
+        this.ctx.drawImage(bg1, this.canvas.width/2 - bg1.width/2, this.canvas.height - bg1.height);   // 绘制背景，绘制锚点底边中心
+        this.ctx.drawImage(bg2, this.canvas.width/2 - bg2.width/2, this.canvas.height - bg2.height);   // 绘制背景，绘制锚点底边中心
+
         Player.draw(this.ctx);  // 绘制玩家
     },
 }
