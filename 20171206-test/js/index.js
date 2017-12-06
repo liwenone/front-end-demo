@@ -8,6 +8,7 @@ $("input.inputframe").focus(function() { //在这里‘input.inputframe’是我
 
 function resize() {
     setTimeout(function() {
+        console.log($(window).height(), $(document).height());
         var height = $(window).height();
         $(document).height(height);
     }, 500);
