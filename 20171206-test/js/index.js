@@ -13,6 +13,7 @@ function resize() {
     setTimeout(function() {
         var height = $(window).height() - $(window).scrollTop();
         $('.content').height(height);
+        $("html, body").animate({ scrollTop: 0 }, 0);
     }, 2000);
 }
 
