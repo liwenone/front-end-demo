@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Circle Offset Alone Line</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+        p span, p input {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="600"></canvas>
+    <p>
+        <span>X坐标：</span>
+        <input id="range" type="range" value="-100" min="-300" max="300">
+    </p>
+    <script>
+        CanvasRenderingContext2D.prototype.fillCircle = function(p, r, fillColor) {
+            this.save()
+            this.fillStyle = fillColor || '#000'
+            this.beginPath()
+            this.arc(p.x, p.y, r, 0, 2*Math.PI, false)
+            this.fill()
+            this.closePath()
+            this.restore()
+        }
+        CanvasRenderingContext2D.prototype.strokeCircle = function(p, r, strokeStyle) {
+            this.save()
+            this.strokeStyle = strokeStyle || '#000'
+            this.beginPath()
+            this.arc(p.x, p.y, r, 0, 2*Math.PI, false)
+            this.stroke()
+            this.closePath()
+            this.restore()
+        }
+
+        function Point(x, y) {
+            this.x = x
+            this.y = y
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, 600, 600)
+            ctx.save()
+            ctx.translate(300, 300)
+            ctx.scale(1, -1)
+            ctx.strokeCircle(p1, R)
+            ctx.fillCircle(p2, R, '#000')
+            ctx.restore()
+        }
+
+
+
+        var ctx = canvas.getContext('2d')
+        var R = 50
+        var p1 = new Point(-250, 0)
+        var p2 = new Point(0, 0)
+        
+        range.addEventListener('input', function(e) {
+            p1.x = e.target.value
+            draw()
+        })
+
+        draw()
+
+
+    </script>
+</body>
+</html>
