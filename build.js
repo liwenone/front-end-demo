@@ -48,6 +48,6 @@ for (let f of fileList) {
     }
 }
 
-let content = header.format(strArr.reverse().join(''));
-let curReadmePath = path.resolve(__dirname, 'README.md')
-fs.writeFileSync(curReadmePath, content);
+// let content = header.format(strArr.reverse().join(''));
+// let curReadmePath = path.resolve(__dirname, 'README.md')
+// fs.writeFileSync(curReadmePath, content);
