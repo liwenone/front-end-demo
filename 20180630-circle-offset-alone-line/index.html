@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="keyword" content="canvas, geometry">
     <title>Circle Offset Alone Line</title>
     <style>
         canvas {
@@ -18,26 +19,20 @@
     <canvas id="canvas" width="600" height="600"></canvas>
     <p>
         <span>X坐标：</span>
-        <input id="range" type="range" value="-100" min="-300" max="300">
+        <input id="range" type="range" value="-250" min="-250" max="250">
     </p>
     <script>
         CanvasRenderingContext2D.prototype.fillCircle = function(p, r, fillColor) {
-            this.save()
             this.fillStyle = fillColor || '#000'
             this.beginPath()
             this.arc(p.x, p.y, r, 0, 2*Math.PI, false)
             this.fill()
-            this.closePath()
-            this.restore()
         }
         CanvasRenderingContext2D.prototype.strokeCircle = function(p, r, strokeStyle) {
-            this.save()
             this.strokeStyle = strokeStyle || '#000'
             this.beginPath()
             this.arc(p.x, p.y, r, 0, 2*Math.PI, false)
             this.stroke()
-            this.closePath()
-            this.restore()
         }
 
         function Point(x, y) {
@@ -55,7 +50,13 @@
             ctx.restore()
         }
 
-
+        function check() {
+            if (Math.abs(p1.x) < 2*R) {
+                p2.y = Math.sqrt((2*R)**2 - p1.x**2)
+            } else {
+                p2.y = 0
+            }
+        }
 
         var ctx = canvas.getContext('2d')
         var R = 50
@@ -64,12 +65,10 @@
         
         range.addEventListener('input', function(e) {
             p1.x = e.target.value
+            check()
             draw()
         })
-
         draw()
-
-
     </script>
 </body>
 </html>
