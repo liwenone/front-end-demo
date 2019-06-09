@@ -38,4 +38,23 @@ body {
   margin: auto;
   width: 100%;
   height: auto;
+  opacity: 0;
+}
+
+
+.fadeOut {
+  animation: fadeOut 1s forwards;
+}
+@keyframes fadeOut {
+  from { opacity: 1}
+  to {opacity: 0}
+}
+
+
+.fadeIn {
+  animation: fadeOut 1s forwards;
+}
+@keyframes fadeOut {
+  from { opacity: 0}
+  to {opacity: 1}
 }

@@ -93,10 +93,12 @@ var Index = {
           currLen++
           loading.innerHTML = Math.ceil(currLen / maxLen * 100) +  '%'
           if (currLen >= maxLen) {
+            loading.className = 'fadeOut'
             setTimeout(function() {
               loading.style.display = 'none'
+              that.ctx.canvas.className = 'fadeIn'
               that.start()
-            }, 500)
+            }, 1000)
           }
         }
       })(i)
