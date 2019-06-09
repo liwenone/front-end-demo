@@ -21,7 +21,7 @@ function inheart(x, y, r) {
 
 
 var STATIC_HEART = 400
-var DYNAMIC_HEART = 5
+var DYNAMIC_HEART = 10
 var MAX_Y = 1548 + 1459 - 90
 
 
@@ -213,7 +213,7 @@ var Index = {
 
   // 创建动态的心
   createHeart: function () {
-    if (this.arrHearts.length < STATIC_HEART + DYNAMIC_HEART && Math.random() < 0.2) {
+    if (this.arrHearts.length < STATIC_HEART + DYNAMIC_HEART && Math.random() < .5) {
       var heart = this.getNewHeart(true)
       if (heart) this.arrHearts.push(heart)
     }
