@@ -91,7 +91,7 @@ var Index = {
         return function () {
           that.mapRes[key] = this
           currLen++
-          loading.innerHTML = 'loading... ' + Math.ceil(currLen / maxLen * 100) +  '%'
+          loading.innerHTML = Math.ceil(currLen / maxLen * 100) +  '%'
           if (currLen >= maxLen) {
             loading.className = 'fadeOut'
             setTimeout(function() {
@@ -133,8 +133,8 @@ var Index = {
 
   // 创建心
   getNewHeart: function (isDynamic, counter) {
-    var x = parseInt(450 + Math.random() * 1800)
-    var y = parseInt(1000 + Math.random() * 1800)
+    var x = parseInt(450 + Math.random() * 3000)
+    var y = parseInt(1000 + Math.random() * 3000)
     if (inheart(x - 1200, 1800 - y, 650)) {
       var index = Math.ceil(Math.random() * 7)
       var alpha = 0.8 + Math.random() * 0.2
