@@ -68,9 +68,7 @@ var Index = {
           if (touch && !that.isTouching) that.isTouching = true
         }, 1000)
       })()
-
       touch = true
-      return false
     })
 
     window.addEventListener('touchend', function() {
