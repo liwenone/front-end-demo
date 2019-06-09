@@ -52,9 +52,9 @@ body {
 
 
 .fadeIn {
-  animation: fadeOut 1s forwards;
+  animation: fadeIn 1s forwards;
 }
-@keyframes fadeOut {
+@keyframes fadeIn {
   from { opacity: 0}
   to {opacity: 1}
 }
