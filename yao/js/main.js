@@ -62,7 +62,8 @@ var Index = {
     var that = this
 
     var touch = false
-    window.addEventListener('touchstart', function() {
+    window.addEventListener('touchstart', function(event) {
+      event.preventDefault()
       touch = true;
 
       (function() {
