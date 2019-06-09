@@ -63,8 +63,6 @@ var Index = {
 
     var touch = false
     window.addEventListener('touchstart', function(event) {
-      event.preventDefault()
-
       (function() {
         setTimeout(function() {
           if (touch && !that.isTouching) that.isTouching = true
@@ -72,7 +70,8 @@ var Index = {
       })()
 
       touch = true
-    }, {passive: false})
+      return false
+    })
 
     window.addEventListener('touchend', function() {
       touch = false
