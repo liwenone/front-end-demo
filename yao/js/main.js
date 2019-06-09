@@ -164,7 +164,7 @@ var Index = {
 
     this.ctx.drawImage(this.mapRes.tree, 835, 1548)
 
-    if (this.isTouching) this.ctx.drawImage(this.mapRes.text, 556, 100)
+    if (this.isTouching) this.ctx.drawImage(this.mapRes.text, 556, 400)
   },
 
 
