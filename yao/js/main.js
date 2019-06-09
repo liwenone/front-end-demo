@@ -64,14 +64,15 @@ var Index = {
     var touch = false
     window.addEventListener('touchstart', function(event) {
       event.preventDefault()
-      touch = true;
 
       (function() {
         setTimeout(function() {
           if (touch && !that.isTouching) that.isTouching = true
         }, 1000)
       })()
-    })
+
+      touch = true
+    }, {passive: false})
 
     window.addEventListener('touchend', function() {
       touch = false
