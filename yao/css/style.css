@@ -26,7 +26,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: .9rem;
   color: rgba(208, 60, 0, .8);
 }
 

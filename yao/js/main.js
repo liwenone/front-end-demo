@@ -91,7 +91,7 @@ var Index = {
         return function () {
           that.mapRes[key] = this
           currLen++
-          loading.innerHTML = Math.ceil(currLen / maxLen * 100) +  '%'
+          loading.innerHTML = 'loading... ' + Math.ceil(currLen / maxLen * 100) +  '%'
           if (currLen >= maxLen) {
             loading.className = 'fadeOut'
             setTimeout(function() {
