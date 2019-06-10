@@ -27,7 +27,8 @@ let strArr = [];
 let i = 1;
 let fileList = fs.readdirSync(__dirname);
 for (let f of fileList) {
-    if (!f.match(/\./)) {
+    if (/^\d{8}/.test(f)) {
+        console.log(f)
         let curDirPath = path.resolve(__dirname, f);
         let indexPath = path.resolve(curDirPath, 'index.html')
         let readmePath = path.resolve(curDirPath, 'README.md');
@@ -48,6 +49,6 @@ for (let f of fileList) {
     }
 }
 
-// let content = header.format(strArr.reverse().join(''));
-// let curReadmePath = path.resolve(__dirname, 'README.md')
-// fs.writeFileSync(curReadmePath, content);
+let content = header.format(strArr.reverse().join(''));
+let curReadmePath = path.resolve(__dirname, 'README.md')
+fs.writeFileSync(curReadmePath, content);
