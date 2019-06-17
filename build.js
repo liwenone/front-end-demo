@@ -33,7 +33,7 @@ for (let f of fileList) {
         let indexPath = path.resolve(curDirPath, 'index.html')
         let readmePath = path.resolve(curDirPath, 'README.md');
 
-        let keywordRegExp = /<meta http-equiv="keyword" content="(.*)?">/;
+        let keywordRegExp = /<meta name="keyword" content="(.*)?">/;
         let titleRegExp = /<title>(.*)?<\/title>/;
 
         let content = fs.readFileSync(indexPath, 'utf-8');
