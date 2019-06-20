@@ -28,7 +28,6 @@ var MAX_Y = 1548 + 1459 - 90
 var Index = {
   init: function () {
     this.initData()
-    this.initEvents()
     this.loadRes()
   },
 
@@ -42,7 +41,6 @@ var Index = {
 
     this.mapRes = {
       'tree': 'tree.png',
-      'text': 'text.png',
       'heart_1': 'heart_1.png',
       'heart_2': 'heart_2.png',
       'heart_3': 'heart_3.png',
@@ -53,27 +51,6 @@ var Index = {
     }
 
     this.arrHearts = []
-    this.isTouching = false
-  },
-
-
-  // 初始化事件
-  initEvents: function () {
-    var that = this
-
-    var touch = false
-    window.addEventListener('touchstart', function(event) {
-      (function() {
-        setTimeout(function() {
-          if (touch && !that.isTouching) that.isTouching = true
-        }, 1000)
-      })()
-      touch = true
-    })
-
-    window.addEventListener('touchend', function() {
-      touch = false
-    })
   },
 
 
@@ -164,8 +141,6 @@ var Index = {
     this.updateHeart(dt)
 
     this.ctx.drawImage(this.mapRes.tree, 835, 1548)
-
-    if (this.isTouching) this.ctx.drawImage(this.mapRes.text, 556, 400)
   },
 
 
