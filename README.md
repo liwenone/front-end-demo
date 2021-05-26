@@ -3,8 +3,8 @@
 
 序号 | 名称 | 关键词  | 时间 | 在线预览
 ---|---| --- | --- | --- |
-7 | [Circle Offset Alone Line](https://github.com/liwenone/front-end-demo/tree/master/20180630-circle-offset-alone-line)| canvas, geometry | 06-30-2018 | [预览](https://liwenone.github.io/front-end-demo/20180630-circle-offset-alone-line/)
-6 | [MapleStory](https://github.com/liwenone/front-end-demo/tree/master/20171105-maplestory)| canvas, game | 11-05-2017 | [预览](https://liwenone.github.io/front-end-demo/20171105-maplestory/)
+7 | [两个圆相切](https://github.com/liwenone/front-end-demo/tree/master/20180630-circle-offset-alone-line)| canvas, geometry | 06-30-2018 | [预览](https://liwenone.github.io/front-end-demo/20180630-circle-offset-alone-line/)
+6 | [角色移动](https://github.com/liwenone/front-end-demo/tree/master/20171105-player)| canvas, game | 11-05-2017 | [预览](https://liwenone.github.io/front-end-demo/20171105-player/)
 5 | [磁带](https://github.com/liwenone/front-end-demo/tree/master/20171017-tape)| css | 10-17-2017 | [预览](https://liwenone.github.io/front-end-demo/20171017-tape/)
 4 | [瓦片地面](https://github.com/liwenone/front-end-demo/tree/master/20170926-tile)| css, 3d | 09-26-2017 | [预览](https://liwenone.github.io/front-end-demo/20170926-tile/)
 3 | [立方体](https://github.com/liwenone/front-end-demo/tree/master/20170925-cube)| css, 3d | 09-25-2017 | [预览](https://liwenone.github.io/front-end-demo/20170925-cube/)
