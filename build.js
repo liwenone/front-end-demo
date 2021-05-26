@@ -5,11 +5,11 @@ const header = `# front-end-demo
 ---|---| --- | --- | --- |
 %s`;
 
-const readme1 = `%s | [%s](https://github.com/lwvoid/front-end-demo/tree/master/%s)| %s | %s | [预览](https://lwvoid.github.io/front-end-demo/%s/)
+const readme1 = `%s | [%s](https://github.com/liwenone/front-end-demo/tree/master/%s)| %s | %s | [预览](https://liwenone.github.io/front-end-demo/%s/)
 `;
 const readme2 = `## screenshot
 
-![image](https://github.com/lwvoid/front-end-demo/blob/master/%s/screenshot.png)`;
+![image](https://github.com/liwenone/front-end-demo/blob/master/%s/screenshot.png)`;
 
 String.prototype.format = String.prototype.format || function() {
     let result = this;
